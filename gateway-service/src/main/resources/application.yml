@@ -45,11 +45,3 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 5000
-
-microservice:
-  product-service:
-    endpoint:
-      uri: http://PRODUCT-SERVICE/product
-  category-service:
-    endpoint:
-      uri: http://CATEGORY-SERVICE/category
