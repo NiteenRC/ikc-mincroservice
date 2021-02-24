@@ -1,0 +1,39 @@
+#APP_NAME
+spring:
+  application:
+    name: CATEGORY-SERVICE
+
+#CONFIG-SERVER
+  cloud:
+    config:
+      uri: http://localhost:6001
+
+#DATABASE
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:test_mem006
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+      hibernate.format_sql: false
+    open-in-view: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+#PORT
+server:
+  port: 8081
+
+#LOGGER
+logging:
+  level:
+    root: warn
+    org:
+      springframework:
+        web: DEBUG
+      hibernate: DEBUG

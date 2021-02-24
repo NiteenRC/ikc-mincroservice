@@ -20,7 +20,7 @@ spring:
               fallbackurl: forward:/categoryFallBack
 #PORT
 server:
-  port: 9091
+  port: 7001
 
 #EUREKA
 eureka:
@@ -36,17 +36,20 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream, info, health
 
 hystrix:
   command:
-    default:
+    fallbackcmd:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 1000
+            timeoutInMilliseconds: 5000
 
-ribbon.ReadTimeout=100000
-
-ribbon.ConnectTimeout=100000
-
+microservice:
+  product-service:
+    endpoint:
+      uri: http://PRODUCT-SERVICE/product
+  category-service:
+    endpoint:
+      uri: http://CATEGORY-SERVICE/category
