@@ -32,3 +32,11 @@ logging:
       springframework:
         web: DEBUG
       hibernate: DEBUG
+      
+microservice:
+  product-service:
+    endpoint:
+      uri: http://PRODUCT-SERVICE/product
+  category-service:
+    endpoint:
+      uri: http://CATEGORY-SERVICE/category      

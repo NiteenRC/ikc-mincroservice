@@ -3,11 +3,6 @@ spring:
   application:
     name: CATEGORY-SERVICE
 
-#CONFIG-SERVER
-  cloud:
-    config:
-      uri: http://localhost:6001
-
 #DATABASE
   datasource:
     driverClassName: org.h2.Driver
@@ -32,7 +27,7 @@ server:
 #LOGGER
 logging:
   level:
-    root: warn
+    ROOT: ERROR
     org:
       springframework:
         web: DEBUG
