@@ -3,6 +3,8 @@ package com.nc.service;
 import com.nc.model.Category;
 import com.nc.model.Product;
 import com.nc.repositoy.CategoryRepo;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
