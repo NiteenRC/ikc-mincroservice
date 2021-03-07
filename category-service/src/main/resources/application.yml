@@ -1,7 +1,7 @@
 #PORT
 server:
-  port: 8081
-
+  port: 8081    
+             
 #APP_NAME
 spring:
   application:
@@ -10,7 +10,7 @@ spring:
 #DATABASE
   datasource:
     driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:test_mem006?DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:test_mem013
     initialization-mode: always
   jpa:
     hibernate:
@@ -23,3 +23,4 @@ spring:
     console:
       enabled: true
       path: /h2-console
+                   
