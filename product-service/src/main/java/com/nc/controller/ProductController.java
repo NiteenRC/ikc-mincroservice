@@ -23,14 +23,14 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity save(@RequestBody ProductCategoryRequest productCategoryRequest) {
+    public ResponseEntity<ProductCategoryResponse> save(@RequestBody ProductCategoryRequest productCategoryRequest) {
         ProductCategoryResponse productCategoryResponse = iProductService.save(productCategoryRequest);
         LOG.info("product {}", productCategoryResponse);
         return ResponseEntity.ok(productCategoryResponse);
     }
 
     @GetMapping
-    public ResponseEntity findAll() {
+    public ResponseEntity<List<Product>> findAll() {
         List<Product> products = iProductService.findAll();
         LOG.info("products {}", products);
         return ResponseEntity.ok(products);

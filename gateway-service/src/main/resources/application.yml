@@ -1,3 +1,7 @@
+#PORT
+server:
+  port: 7001
+  
 #APP_NAME
 spring:
   application:
@@ -18,9 +22,21 @@ spring:
              args:
               name: category-service
               fallbackurl: forward:/categoryFallBack
-#PORT
-server:
-  port: 7001
+#SECURITY      
+  security:
+    oauth2:
+      client:
+        client-id: mobile
+        client-secret: pin
+        user-authorization-uri: http://localhost:9191/oauth/authorize
+        access-token-uri: http://localhost:9191/oauth/token
+      resource:
+        token-info-uri: http://localhost:9191/oauth/check_token
+        
+  servlet:
+    session:
+      cookie:
+        name: KSESSION 
 
 management:
   endpoints:
@@ -36,4 +52,5 @@ hystrix:
           thread:
             timeoutInMilliseconds: 5000
             
-#http://localhost:7001/actuator/hystrix.stream            
+#http://localhost:7001/actuator/hystrix.stream   
+         

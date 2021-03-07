@@ -1,3 +1,7 @@
+#PORT
+server:
+  port: 6001
+
 #APP_NAME
 spring:
   application:
@@ -7,17 +11,3 @@ spring:
       server:
         git:
           uri: https://github.com/NiteenRC/ikc-cloud-config-server
-
-#PORT
-server:
-  port: 6001
-
-#LOGGER
-logging:
-  level:
-    root: warn
-    org:
-      springframework:
-        web: DEBUG
-      hibernate: DEBUG
-
